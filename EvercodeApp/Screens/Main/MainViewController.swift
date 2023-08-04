@@ -28,8 +28,7 @@ final class MainViewController: UIViewController {
     
     @objc func didPressDetailButton() {
         
-        let detailViewController = DetailViewController()
-        detailViewController.delegate = self
+        let detailViewController = DetailViewController(delegate: self)
         self.present(detailViewController, animated: true)
     }
 }
