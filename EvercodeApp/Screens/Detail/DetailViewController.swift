@@ -6,7 +6,7 @@ protocol DetailViewControllerDelegate: AnyObject {
 
 final class DetailViewController: UIViewController {
     
-    let delegate: DetailViewControllerDelegate
+    weak var delegate: DetailViewControllerDelegate?
     
     init(delegate: DetailViewControllerDelegate) {
         self.delegate = delegate
@@ -42,6 +42,6 @@ final class DetailViewController: UIViewController {
     }
     
     @objc func didPressDismissButton() {
-        delegate.dismissDetail()
+        delegate?.dismissDetail()
     }
 }
